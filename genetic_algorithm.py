@@ -227,6 +227,3 @@ if __name__ == '__main__':
     
         print('generation: ', generation)
         population = new_population
-    
-
-

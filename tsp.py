@@ -20,7 +20,7 @@ PLOT_X_OFFSET = 450
 # GA
 N_CITIES = 15
 POPULATION_SIZE = 100
-N_GENERATIONS = None
+N_GENERATIONS = 2000
 MUTATION_PROBABILITY = 0.5
 
 # Define colors
@@ -83,6 +83,9 @@ while running:
 
     generation = next(generation_counter)
 
+    if generation >= N_GENERATIONS:
+        running = False
+
     screen.fill(WHITE)
 
     population_fitness = [calculate_fitness(
@@ -93,6 +96,8 @@ while running:
 
     best_fitness = calculate_fitness(population[0])
     best_solution = population[0]
+
+    # print("best_solution", best_solution)
 
     best_fitness_values.append(best_fitness)
     best_solutions.append(best_solution)
